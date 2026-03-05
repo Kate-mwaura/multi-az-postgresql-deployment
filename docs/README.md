@@ -26,21 +26,7 @@ Technologies used:
 
 ## Architecture Diagram
 
-```mermaid
-graph TD
-
-    subgraph AWS VPC
-        A[Primary Node<br>AZ-1]
-        B[Sync Replica<br>AZ-2]
-        C[Async Replica<br>AZ-3]
-    end
-
-    A -->|Streaming Replication| B
-    A -->|Streaming Replication| C
-
-    A --> D[DLM Snapshot Policy]
-    D --> E[EBS Snapshots]
-```
+![System Architecture](./images/'Architectural Diagram.png')
 
 ---
 

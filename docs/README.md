@@ -26,7 +26,7 @@ Technologies used:
 
 ## Architecture Diagram
 
-![System Architecture](./images/Architectural Diagram)
+![System Architecture](./images/'Architectural Diagram.png')
 
 ---
 

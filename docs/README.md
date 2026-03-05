@@ -78,7 +78,7 @@ The database infrastructure was deployed inside a private VPC.
 VPC CIDR:
 
 ```
-10.0.0.0/16
+172.31.0.0/16
 ```
 
 Security rules:
@@ -111,7 +111,7 @@ Volume configuration:
 | Type | gp3 |
 | Size | 23GB |
 | IOPS | 3000 |
-| Throughput | 250 MB/s |
+| Throughput | 125 MB/s |
 
 The gp3 volume was selected because it allows independent control of IOPS and throughput while remaining cost effective.
 
@@ -130,7 +130,7 @@ lsblk
 Format disk:
 
 ```bash
-sudo mkfs -t xfs /dev/xvdf
+sudo mkfs -t xfs /dev/nvme1n1
 ```
 
 Create mount point:
@@ -142,7 +142,7 @@ sudo mkdir -p /mnt/postgres_data
 Mount disk:
 
 ```bash
-sudo mount /dev/xvdf /mnt/postgres_data
+sudo mount /dev/nvme1n1 /mnt/postgres_data
 ```
 
 Verify mount:

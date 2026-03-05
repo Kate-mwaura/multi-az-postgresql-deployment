@@ -26,8 +26,7 @@ Technologies used:
 
 ## Architecture Diagram
 
-![System Architecture](./images/'Architectural Diagram.png')
-
+![System Architecture](./images/Architectural_Diagram.png)
 ---
 
 ## Infrastructure
@@ -36,7 +35,7 @@ Technologies used:
 |-----------|--------------|
 | Cloud Provider | AWS |
 | Instances | 3 EC2 Instances |
-| Instance Type | t3.medium |
+| Instance Type | t3.micro |
 | Storage | 23GB gp3 EBS volumes |
 | Database | PostgreSQL 16 |
 | Container Runtime | Docker |
@@ -66,6 +65,7 @@ VPC CIDR:
 ```
 172.31.0.0/16
 ```
+![Vpc ID and state](./images/Vpc.png)
 
 Security rules:
 
@@ -149,8 +149,9 @@ Add:
 ```
 UUID=<disk-uuid> /mnt/postgres_data xfs defaults,nofail 0 2
 ```
-
+![Storage Mounting Verification](./images/lsblk.png)
 ---
+
 
 # Deploying PostgreSQL with Docker
 
@@ -167,7 +168,7 @@ Verify container:
 ```bash
 docker ps
 ```
-
+![Docker Container Status](./images/docker_ps.png)
 ---
 
 # Replication Setup
@@ -215,7 +216,7 @@ Expected result:
 172.31.37.41 | streaming | sync
 172.31.22.54 | streaming | async
 ```
-
+![Replication Status Verification](./images/replica.png)
 ---
 
 # Disaster Recovery
@@ -236,7 +237,7 @@ Snapshots ensure recovery if an entire availability zone fails.
 
 # Snapshot Policy Screenshot
 
-![DLM Policy](images/dlm-policy.png)
+![DLM Policy](images/snapshots_all.png)
 
 ---
 
@@ -289,4 +290,4 @@ This project provided hands-on experience with:
 
 Kate Mwaura
 
-DevOps / Cloud Engineering Student
+DevOps Engineer

@@ -11,7 +11,7 @@ services:
       - /mnt/postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-    # Essential settings for replication later
+    # Essential settings for replication 
     command: 
       - "postgres"
       - "-c"
